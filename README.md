@@ -18,3 +18,4 @@ ruby ./boris-bikes/boris-bikes.rb
 ## STEPS ##
 1. The first step of this exercise was to create this directory, initialise a git, create this readme and push to github.
 2. Next we translated some user stories into functional representations over here: https://docs.google.com/spreadsheets/d/1Xjil_MCMeRIaGoWcDQp8bMnEl_8EWXU6wqdAhFShFig/edit?usp=sharing
+3. We defined a feature test in irb and built an understanding of what a stack trace is. We attempted to created a new instance of a docking station using the command DockingStation.new but obviously this failed since we have not yet defined the class.
