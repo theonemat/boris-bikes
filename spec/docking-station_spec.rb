@@ -8,4 +8,9 @@ describe DockingStation do
   # end
   # second attempt
   it { is_expected.to respond_to :release_bike }
+  # write a test for the creation of a bike and that expects the bike to be working
+  it 'releases working bike' do
+    bike = subject.release_bike
+    expect(bike).to be_working
+  end
 end
