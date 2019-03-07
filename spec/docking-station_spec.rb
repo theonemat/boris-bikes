@@ -57,6 +57,10 @@ describe DockingStation do
     end
   end
 
+  it 'checks defualt cap' do
+  expect(DockingStation::DEFAULT_CAPACITY).to eq 20
+  end
+
 
 
 
