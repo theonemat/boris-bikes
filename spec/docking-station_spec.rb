@@ -1,7 +1,7 @@
 require 'docking-station'
 describe DockingStation do
 
-  DEFAULT_CAPACITY =  20
+
   # write a test that 'expects' DockingStation instances to 'respond_to' the
   # release_bike method
   # first attempt
@@ -39,8 +39,9 @@ describe DockingStation do
 
 
   it 'adds 20 bikes' do
-    station = DockingStation.new
-     20.times { station.dock Bike.new }
+     DockingStation::DEFAULT_CAPACITY.times do
+       subject.dock Bike.new
+     end
    end
 
 
