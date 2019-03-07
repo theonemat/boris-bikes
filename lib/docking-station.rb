@@ -18,17 +18,27 @@ end
 
   # updated under the assumption that docks start empty
   def release_bike
-    fail 'No bikes available' unless @bike_list.length  >= 1
+    empty?
     @bike_list.pop
-    
+
+
   end
 
   def dock(bike)
-    fail "It's full" if @bike_list.length == @capacity
+full?
     #fail 'Dockstation is full' if @bike # (not future proof code as dockstation capacity can only be 1)
     @bike_list << bike
-    
+
   end
+private
+  def full?
+    fail "It's full" if @bike_list.length == @capacity
+  end
+  def empty?
+    fail 'No bikes available' unless @bike_list.length  >= 1
+  end
+
+
 
   # not required because this is what attr_reader does
   # def bike
