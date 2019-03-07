@@ -20,30 +20,58 @@ describe DockingStation do
   it 'docks a bike' do
     # bike = subject.release_bike
     bike = Bike.new  # release_bike no longer creates bike
-    expect(subject.dock(bike)).to eq bike
+    subject.dock(bike)
+
+    expect(subject.bike_list).to include bike
   end
   # we're using a nested describe block here because we are describing the behaviour
   # of a specific method within a class
+
   describe '#release_bike' do
     it 'releases a bike' do
       bike = Bike.new
       subject.dock(bike)
       # we want to release the bike we docked
-      expect(subject.release_bike).to eq bike
+      expect(subject.release_bike).to eq (bike)
     end
-    it 'raises an error when there are no bikes available' do
-      # don't need to dock a bike first
-      expect {subject.release_bike}.to raise_error 'No bikes available'
-    end
-  end
-  # check if the dock is full when we try to dock a new bike
-  describe '#dock' do
-    it 'raises an error if dock capacity is full' do
-      bike = Bike.new
-      subject.dock(bike)
-      bike = Bike.new # override to create > 1 instance variables
-      expect{subject.dock(bike)}.to raise_error 'Dockstation is full'
+    it 'puts error when no bike' do
+    expect {subject.release_bike}.to raise_error('No bikes available')
     end
   end
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #   it 'raises an error when there are no bikes available' do
+  #     # don't need to dock a bike first
+  #     expect {subject.release_bike}.to raise_error 'No bikes available'
+  #   end
+  # end
+  # # check if the dock is full when we try to dock a new bike
+  # describe '#dock' do
+  #   it 'raises an error if dock capacity is full' do
+  #     bike = Bike.new
+  #     subject.dock(bike)
+  #     bike = Bike.new # override to create > 1 instance variables
+  #     expect{subject.dock(bike)}.to raise_error 'Dockstation is full'
+  #   end
+  # end
 
 end
