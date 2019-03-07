@@ -36,12 +36,9 @@ describe DockingStation do
   end
 
 
-  it 'cannot dock bike if full' do
+  it 'adds 20 bikes' do
     station = DockingStation.new
-     bike = Bike.new
-     station.dock(bike)
-     station.dock(bike)
-     expect { station.dock(bike)}.to raise_error("It's full")
+     20.times { station.dock Bike.new }
    end
 
 
