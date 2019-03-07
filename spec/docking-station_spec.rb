@@ -27,6 +27,24 @@ describe DockingStation do
   # we're using a nested describe block here because we are describing the behaviour
   # of a specific method within a class
 
+  it 'cannot dock bike if full' do
+   station = DockingStation.new(2)
+    bike = Bike.new
+    station.dock(bike)
+    station.dock(bike)
+    expect { station.dock(bike)}.to raise_error("It's full")
+  end
+
+
+  it 'cannot dock bike if full' do
+    station = DockingStation.new
+     bike = Bike.new
+     station.dock(bike)
+     station.dock(bike)
+     expect { station.dock(bike)}.to raise_error("It's full")
+   end
+
+
   describe '#release_bike' do
     it 'releases a bike' do
       bike = Bike.new

@@ -4,8 +4,10 @@ class DockingStation
   attr_reader :bike_list
 
   
-def initialize 
+def initialize (capacity = 2)
 @bike_list = []
+@capacity = capacity
+
 end
 
 
@@ -23,6 +25,7 @@ end
   end
 
   def dock(bike)
+    fail "It's full" if @bike_list.length == @capacity
     #fail 'Dockstation is full' if @bike # (not future proof code as dockstation capacity can only be 1)
     @bike_list << bike
     
