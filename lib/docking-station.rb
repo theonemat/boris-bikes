@@ -15,6 +15,7 @@ class DockingStation
   end
 
   def dock(bike)
+    fail 'Dockstation is full' if @bike # (not future proof code as dockstation capacity can only be 1)
     @bike = bike
   end
 
