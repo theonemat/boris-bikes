@@ -1,5 +1,7 @@
 require 'docking-station'
 describe DockingStation do
+
+  DEFAULT_CAPACITY =  20
   # write a test that 'expects' DockingStation instances to 'respond_to' the
   # release_bike method
   # first attempt
@@ -53,7 +55,7 @@ describe DockingStation do
     expect {subject.release_bike}.to raise_error('No bikes available')
     end
   end
-  
+
 
 
 

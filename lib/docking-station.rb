@@ -3,8 +3,7 @@ class DockingStation
 
   attr_reader :bike_list
 
-  DEFAULT_CAP = 20
-def initialize (capacity = DEFAULT_CAP)
+def initialize (capacity = DEFAULT_CAPACITY)
 @bike_list = []
 @capacity = capacity
 end
@@ -30,6 +29,7 @@ full?
     @bike_list << bike
 
   end
+
 private
   def full?
     fail "It's full" if @bike_list.length == @capacity
